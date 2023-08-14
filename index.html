@@ -12,7 +12,7 @@
         body {
             width: 100vw;
             height: 100vh;
-            font-size: 30px;
+            font-size: 40px;
         }
 
         .container {
@@ -69,6 +69,10 @@
             width: 10%;
         }
 
+        #baguaCon {
+            border-right: 1px solid #414141;
+        }
+
         #con {
             padding: 0 20px;
             width: 90%;
@@ -78,16 +82,46 @@
         .red {
             color: red;
         }
-        .font{
-            font-size: 30px;
+
+        .font {
+            font-size: 40px;
         }
+
+        .sinput {
+            margin-bottom: 20px;
+            height: 4%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .sinput input {
+            height: 100%;
+        }
+
         #qian {}
+
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 40px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-button:hover {
+            background-color: #2980b9;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div>
+        <div class="sinput">
             <span class="font">请输入要查询的内容:</span><input type="text" id="search">
             <button onclick="toSearch()">查询</button>
         </div>
@@ -454,7 +488,7 @@
                     if (str.indexOf(val) > -1) inStrArr.push(spans[i]);
                 }
                 $("#search")[0].inStrArr = inStrArr;//记录当前数组
-                if(inStrArr.length==0){
+                if (inStrArr.length == 0) {
                     alert("未找到！");
                 }
                 for (var m = 0; m < inStrArr.length; m++) {
