@@ -18,6 +18,7 @@
         .container {
             width: 100%;
             height: 100%;
+            padding-top: 9%;
         }
 
         .flexCenter {
@@ -67,6 +68,9 @@
 
         #baguaList {
             width: 10%;
+            position: fixed;
+            left: 0;
+            top: 9%;
         }
 
         #baguaCon {
@@ -75,8 +79,9 @@
 
         #con {
             padding: 0 20px;
-            width: 90%;
+            width: 100%;
             box-sizing: border-box;
+            padding-left: 11%;
         }
 
         .red {
@@ -88,15 +93,22 @@
         }
 
         .sinput {
-            margin-bottom: 20px;
             height: 4%;
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            position: fixed;
+            top: 0;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 2px solid #ccc;
         }
 
         .sinput input {
             height: 100%;
+            font-size: 35px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
         }
 
         #qian {}
@@ -106,7 +118,7 @@
             padding: 10px 20px;
             font-size: 40px;
             border: none;
-            background-color: #3498db;
+            background-color: #226490;
             color: white;
             border-radius: 5px;
             cursor: pointer;
@@ -396,6 +408,7 @@
             }
         };
         var objs = { "乾": "qian", "兑": "dui", "离": "li", "震": "zhen", "巽": "xun", "坎": "kan", "艮": "gen", "坤": "kun" }
+        var arrs = ["qian", "dui", "li", "zhen", "xun", "kan", "gen", "kun"];
         boxId = "baguaList";
         // ["乾", "含义", "象义"],["兑", "含义", "象义"],["离", "含义", "象义"],["震", "含义", "象义"],["巽", "含义", "象义"],["坎", "含义", "象义"],["艮", "含义", "象义"],["坤", "含义", "象义"]
         aNav("baguaCon", [["八卦", "乾", "兑", "离", "震", "巽", "坎", "艮", "坤"]], function (obj) {
@@ -490,6 +503,7 @@
                 $("#search")[0].inStrArr = inStrArr;//记录当前数组
                 if (inStrArr.length == 0) {
                     alert("未找到！");
+                    return;
                 }
                 for (var m = 0; m < inStrArr.length; m++) {
                     var sp = inStrArr[m];
@@ -499,20 +513,29 @@
                     sp.innerHTML = newstr;
                     break;
                 }
-            } else {//如果当前value和以前的相同,从当前index开始查询
-                for (var m = $("#search")[0].i + 1; m < inStrArr.length; m++) {
-                    var str = inStrArr[m].innerHTML;
-                    var newstr = str.replace(val, "<span class='red'>" + val + "</span>");
-                    inStrArr[m].innerHTML = newstr;
-                    $("#search")[0].i = m;
-                    break;
+            } else if(inStrArr.length>0){//如果当前value和以前的相同,从当前index开始查询
+                if($("#search")[0].i + 1 > inStrArr.length-1){
+                    $("#search")[0].i =-1;
                 }
+                    for (var m = $("#search")[0].i + 1; m < inStrArr.length; m++) {
+                        var str = inStrArr[m].innerHTML;
+                        var newstr = str.replace(val, "<span class='red'>" + val + "</span>");
+                        inStrArr[m].innerHTML = newstr;
+                        $("#search")[0].i = m;
+                        break;
+                    }
+            }else{
+                alert("未找到！");
             }
-            //查找以后跳转页面
+            //查找以后跳转页面并设置滚动条
             var curspan = inStrArr[$("#search")[0].i];
-            var parId = $(curspan.parentNode.parentNode).attr("id");
-            $("#" + parId).css("display", "block");
-            $("#" + parId).siblings().css("display", "none");
+            var ii = arrs.indexOf($(curspan.parentNode.parentNode).attr("id"));
+            $("#0-" + ii).click();
+            var targetTop = $(curspan).offset().top;
+            var windowHeight = $(window).height();
+            var scrollToPosition = targetTop - (windowHeight / 2);
+            // 滚动页面使目标元素在中上方
+            $("html, body").animate({ scrollTop: scrollToPosition }, 800);
         }
     </script>
 </body>
