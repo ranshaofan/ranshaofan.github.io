@@ -75,14 +75,18 @@
             border-right: 1px solid #ccc;
         }
 
-        #baguaCon {
-        }
+        #baguaCon {}
 
         #con {
             padding: 0 20px;
-            width: 100%;
+            width: 100vw;
+            height: 100vh;
+            overflow: scroll;
             box-sizing: border-box;
+            position: absolute;
             padding-left: 11%;
+            top: 9%;
+            left: 0;
         }
 
         .red {
@@ -103,6 +107,7 @@
             padding: 12px;
             background-color: #fff;
             border-bottom: 2px solid #ccc;
+            z-index: 100;
         }
 
         .sinput input {
@@ -539,11 +544,23 @@
             var curspan = inStrArr[$("#search")[0].i];
             var ii = arrs.indexOf($(curspan.parentNode.parentNode).attr("id"));
             $("#0-" + ii).click();
-            var targetTop = $(curspan).offset().top;
-            var windowHeight = $(window).height();
-            var scrollToPosition = targetTop - (windowHeight / 2);
-            // 滚动页面使目标元素在中上方
-            $("html, body").animate({ scrollTop: scrollToPosition }, 800);
+            var scrollableDiv = $(curspan.parentNode.parentNode.parentNode);
+                scrollableDiv.scrollTop(0);
+            // 获取父级 div 的 top 值的百分比（例：10%）
+            var parentTopPercentage = parseFloat(scrollableDiv.css("top"));
+
+            // 计算目标元素相对于容器的位置
+            var targetOffset = $(curspan).offset().top;
+            var containerOffset = scrollableDiv.offset().top;
+            var parentHeight = scrollableDiv.height();
+
+            // 使用百分比计算父级 div 的 top 值对应的像素值
+            var parentTopPixels = (parentTopPercentage / 100) * parentHeight;
+
+            var scrollToPosition = targetOffset - containerOffset - parentTopPixels + ($(curspan).height() / 2);
+
+            // 滚动容器使目标元素在中上方
+            scrollableDiv.scrollTop(scrollToPosition);
         }
 
         window.onload = function () {
