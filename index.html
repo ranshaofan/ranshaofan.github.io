@@ -105,8 +105,9 @@
         }
 
         .sinput input {
+            width: 20%;
             height: 100%;
-            font-size: 35px;
+            font-size: 40px !important;
             border: 2px solid #ccc;
             border-radius: 10px;
         }
@@ -513,20 +514,24 @@
                     sp.innerHTML = newstr;
                     break;
                 }
-            } else if(inStrArr.length>0){//如果当前value和以前的相同,从当前index开始查询
-                if($("#search")[0].i + 1 > inStrArr.length-1){
-                    $("#search")[0].i =-1;
+            } else if (inStrArr.length > 0) {//如果当前value和以前的相同,从当前index开始查询
+                if ($("#search")[0].i + 1 > inStrArr.length - 1) {
+                    $("#search")[0].i = -1;
                 }
-                    for (var m = $("#search")[0].i + 1; m < inStrArr.length; m++) {
-                        var str = inStrArr[m].innerHTML;
-                        var newstr = str.replace(val, "<span class='red'>" + val + "</span>");
-                        inStrArr[m].innerHTML = newstr;
-                        $("#search")[0].i = m;
-                        break;
-                    }
-            }else{
+                for (var m = $("#search")[0].i + 1; m < inStrArr.length; m++) {
+                    var str = inStrArr[m].innerHTML;
+                    var newstr = str.replace(val, "<span class='red'>" + val + "</span>");
+                    inStrArr[m].innerHTML = newstr;
+                    $("#search")[0].i = m;
+                    break;
+                }
+            } else {
                 alert("未找到！");
             }
+            $("body").css({
+                transform: "scale(1)",
+                transformOrigin: "top left"
+            });
             //查找以后跳转页面并设置滚动条
             var curspan = inStrArr[$("#search")[0].i];
             var ii = arrs.indexOf($(curspan.parentNode.parentNode).attr("id"));
