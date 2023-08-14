@@ -7,12 +7,13 @@
     <meta http-equiv="Cache" content="no-cache">
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>八卦象义查询</title>
     <style>
         body {
             width: 100vw;
             height: 100vh;
-            font-size: 40px;
+            font-size: calc(10vw / 2.6);
         }
 
         .container {
@@ -89,7 +90,7 @@
         }
 
         .font {
-            font-size: 40px;
+            font-size: calc(10vw / 2.6);
         }
 
         .sinput {
@@ -99,7 +100,7 @@
             align-items: center;
             position: fixed;
             top: 0;
-            padding: 20px;
+            padding: 12px;
             background-color: #fff;
             border-bottom: 2px solid #ccc;
         }
@@ -107,7 +108,7 @@
         .sinput input {
             width: 20%;
             height: 100%;
-            font-size: 40px !important;
+            font-size: calc(10vw / 2.6) !important;
             border: 2px solid #ccc;
             border-radius: 10px;
         }
@@ -117,7 +118,7 @@
         button {
             display: inline-block;
             padding: 10px 20px;
-            font-size: 40px;
+            font-size: calc(10vw / 2.6);
             border: none;
             background-color: #226490;
             color: white;
@@ -542,6 +543,37 @@
             // 滚动页面使目标元素在中上方
             $("html, body").animate({ scrollTop: scrollToPosition }, 800);
         }
+
+        window.onload = function () {
+            //e.preventDefault() --- 阻止默认事件
+            //当一个手指放在屏幕上时，会触发touchstart事件。如果另一个手指又放在了屏幕上，则会先触发gesturestart事件，随后触发基于该手指的touchstart事件。
+            document.addEventListener('gesturestart', function (e) {
+                e.preventDefault();
+            });
+
+            //在单个元素上单击两次 --- dblclick
+            document.addEventListener('dblclick', function (e) {
+                e.preventDefault();
+            });
+
+            //一个手指放在屏幕上时，会触发touchstart事件
+            document.addEventListener('touchstart', function (event) {
+                if (event.touches.length > 1) {
+                    event.preventDefault();
+                }
+            });
+
+            //如果一个或两个手指在屏幕上滑动，将会触发gesturechange事件
+            //但只要有一个手指移开，则会触发gestureend事件，紧接着又会触发toucheend事件。
+            var lastTouchEnd = 0;
+            document.addEventListener('touchend', function (event) {
+                var now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+        };
     </script>
 </body>
 
