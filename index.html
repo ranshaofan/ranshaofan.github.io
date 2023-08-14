@@ -12,6 +12,7 @@
         body {
             width: 100vw;
             height: 100vh;
+            font-size: 30px;
         }
 
         .container {
@@ -39,13 +40,15 @@
         }
 
         .navHead {
-            font-size: calc(10vw / 9);
+            font-size: calc(10vw / 3);
             background-color: #486082;
             color: #fff;
+            height: 10vh;
         }
 
         .navLi {
-            font-size: calc(10vw / 10.5);
+            font-size: calc(10vw / 3);
+            height: 10vh;
         }
 
         .navHead:hover {
@@ -75,7 +78,9 @@
         .red {
             color: red;
         }
-
+        .font{
+            font-size: 30px;
+        }
         #qian {}
     </style>
 </head>
@@ -83,7 +88,7 @@
 <body>
     <div class="container">
         <div>
-            <span>请输入要查询的内容:</span><input type="text" id="search">
+            <span class="font">请输入要查询的内容:</span><input type="text" id="search">
             <button onclick="toSearch()">查询</button>
         </div>
         <div id="baguaCon" class="flexCenter">
