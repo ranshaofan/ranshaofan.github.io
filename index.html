@@ -13,18 +13,18 @@
         body {
             width: 100vw;
             height: 100vh;
+            margin: 0;
             font-size: calc(10vw / 2.6);
         }
 
         .container {
             width: 100%;
             height: 100%;
-            padding-top: 9%;
         }
 
         .flexCenter {
-            display: flex;
-            justify-content: center;
+            /* display: flex; */
+            /* justify-content: center; */
             /* align-items: center; */
         }
 
@@ -69,9 +69,10 @@
 
         #baguaList {
             width: 10%;
-            position: fixed;
+            position: sticky;
             left: 0;
             top: 9%;
+            background-color: #fff;
             border-right: 1px solid #ccc;
         }
 
@@ -86,7 +87,7 @@
             position: absolute;
             padding-left: 11%;
             top: 9%;
-            left: 0;
+            left: 5px;
         }
 
         .red {
@@ -102,7 +103,7 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            position: fixed;
+            position: sticky;
             top: 0;
             padding: 12px;
             background-color: #fff;
@@ -561,11 +562,11 @@
 
             // 滚动容器使目标元素在中上方
             scrollableDiv.scrollTop(scrollToPosition);
-            $("#sinput").css("position","fixed");
+            $("#sinput").css("position","sticky");
             $("#sinput").css("top","0");
         }
         $("#sinput").blur(function(){
-            $("#sinput").css("position","fixed");
+            $("#sinput").css("position","sticky");
             $("#sinput").css("top","0");
         });
 
