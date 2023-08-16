@@ -10,11 +10,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>八卦象义查询</title>
     <style>
+        @media (max-width: 767px) {
+            body {
+                font-size: 16px;
+            }
+        }
+
+        /* 网页端字体大小 */
+        @media (min-width: 768px) {
+            body {
+                font-size: 60px;
+            }
+        }
+
         body {
             width: 100vw;
             height: 100vh;
             margin: 0;
-            font-size: calc(10vw / 2.6);
         }
 
         .container {
@@ -42,14 +54,14 @@
         }
 
         .navHead {
-            font-size: calc(10vw / 3);
+            /* font-size: calc(10vw / 3); */
             background-color: #486082;
             color: #fff;
             height: 10vh;
         }
 
         .navLi {
-            font-size: calc(10vw / 3);
+            /* font-size: calc(10vw / 3); */
             height: 10vh;
         }
 
@@ -96,7 +108,7 @@
         }
 
         .font {
-            font-size: calc(10vw / 2.6);
+            /* font-size: calc(10vw / 2.6); */
         }
 
         .sinput {
@@ -115,7 +127,7 @@
         .sinput input {
             width: 20%;
             height: 100%;
-            font-size: calc(10vw / 2.6) !important;
+            /* font-size: calc(10vw / 2.6) !important; */
             border: 2px solid #ccc;
             border-radius: 10px;
             text-size-adjust: none;
@@ -127,7 +139,7 @@
         button {
             display: inline-block;
             padding: 10px 20px;
-            font-size: calc(10vw / 2.6);
+            /* font-size: calc(10vw / 2.6); */
             border: none;
             background-color: #226490;
             color: white;
@@ -547,7 +559,7 @@
             var ii = arrs.indexOf($(curspan.parentNode.parentNode).attr("id"));
             $("#0-" + ii).click();
             var scrollableDiv = $(curspan.parentNode.parentNode.parentNode);
-                scrollableDiv.scrollTop(0);
+            scrollableDiv.scrollTop(0);
             // 获取父级 div 的 top 值的百分比（例：10%）
             var parentTopPercentage = parseFloat(scrollableDiv.css("top"));
 
@@ -563,12 +575,12 @@
 
             // 滚动容器使目标元素在中上方
             scrollableDiv.scrollTop(scrollToPosition);
-            $("#sinput").css("position","sticky");
-            $("#sinput").css("top","0");
+            $("#sinput").css("position", "sticky");
+            $("#sinput").css("top", "0");
         }
-        $("#sinput").blur(function(){
-            $("#sinput").css("position","sticky");
-            $("#sinput").css("top","0");
+        $("#sinput").blur(function () {
+            $("#sinput").css("position", "sticky");
+            $("#sinput").css("top", "0");
         });
 
         window.onload = function () {
