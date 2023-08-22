@@ -8,7 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>八卦象义查询</title>
+    <title>我滴小秘密</title>
     <style>
         @media (max-width: 767px) {
             body {
@@ -224,16 +224,23 @@
         .popup button:hover {
             background-color: #ff3882;
         }
+        #ready{
+            display: none;
+        }
     </style>
 </head>
 
 <body>
     <div class="begin">
         <div class="popup-container">
-            <div class="popup">
+            <div class="popup" id="xuanze">
                 <span>请选择</span>
                 <button class="baguabtn" onclick="bagua()">八卦象义详解</button>
-                <button class="mimibtn" onclick="mimi()">小董的秘密</button>
+                <button class="mimibtn" onclick="ddbtn()">小董的秘密</button>
+            </div>
+            <div class="popup" id="ready">
+                <span>要在一个安静的环境观看哦</span>
+                <button class="mimibtn" onclick="mimi()">好的，我知道啦</button>
             </div>
         </div>
     </div>
@@ -535,8 +542,15 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        function ddbtn(){
+            $("#xuanze").css("display","none");
+            // $("#ready").css("display","block");
+            $("#ready").slideDown();
+        }
         function mimi() {
-            $("#dmimi").css("display", "block").siblings().hide();
+            $("#dmimi").slideDown(2000).siblings().hide();
+            // $(".popup-container").css("display","none");
+            // $("#dmimi").slideUp();
         }
         function bagua() {
             $(".container").css("display", "block").siblings().hide();
