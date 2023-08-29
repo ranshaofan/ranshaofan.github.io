@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Cache" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>关于</title>
+    <style>
+        p{
+            display: flex;
+        }
+    </style>
+    <link href="../zhouyi.css" type="text/css" rel="stylesheet" />
+    <link href="../style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div>
+        <video controls width="640" height="360">
+            <source src="" type="video/mp4">
+        </video>
+        <p>Playback Speed:
+            <button onclick="changeSpeed(0.5)">0.5x</button>
+            <button onclick="changeSpeed(1)">1x</button>
+            <button onclick="changeSpeed(1.5)">1.5x</button>
+            <button onclick="changeSpeed(2)">2x</button>
+        </p>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // 获取完整的URL
+    var urlString = window.location.href;
+    console.log(urlString);
+    // 获取URL中的查询部分（参数部分）
+    var urlParams = new URLSearchParams(window.location.search);
+
+    // 创建一个空对象来存储参数
+    var paramsObject = {};
+
+    // 遍历所有参数，将它们存储在对象中
+    urlParams.forEach(function (value, key) {
+        paramsObject[key] = value;
+    });
+    console.log(paramsObject);
+    // 在页面上显示参数
+    var video = document.querySelector('video');
+    video.src="../video/"+paramsObject.na+".mp4";
+    video.load();
+    function changeSpeed(speed) {
+        video.playbackRate = speed;
+    }
+</script>
+
+</html>
