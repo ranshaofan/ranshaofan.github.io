@@ -8,228 +8,12 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>我滴小秘密</title>
+    <title>关于</title>
     <style>
-        @media (max-width: 767px) {
-            body {
-                font-size: 16px;
-            }
-        }
-
-        /* 网页端字体大小 */
-        @media (min-width: 768px) {
-            body {
-                font-size: 60px;
-            }
-        }
-
-        body {
-            width: 100vw;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            width: 100%;
-            height: 100%;
-            display: none;
-        }
-
-        .flexCenter {
-            /* display: flex; */
-            /* justify-content: center; */
-            /* align-items: center; */
-        }
-
-        .nav {
-            width: 100%;
-            height: 100%;
-        }
-
-        .navHead,
-        .navLi {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 40px;
-        }
-
-        .navHead {
-            /* font-size: calc(10vw / 3); */
-            background-color: #486082;
-            color: #fff;
-            height: 10vh;
-        }
-
-        .navLi {
-            /* font-size: calc(10vw / 3); */
-            height: 10vh;
-        }
-
-        .navHead:hover {
-            cursor: pointer !important;
-        }
-
-        .navUl {
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        .navLi:hover {
-            background-color: rgba(209, 215, 219, 0.6) !important;
-            cursor: pointer !important;
-        }
-
-        #baguaList {
-            width: 10%;
-            position: sticky;
-            left: 0;
-            top: 9%;
-            background-color: #fff;
-            border-right: 1px solid #ccc;
-            z-index: 100;
-        }
-
-        #baguaCon {}
-
-        #con {
-            padding: 0 20px;
-            width: 100vw;
-            height: 100vh;
-            overflow: scroll;
-            box-sizing: border-box;
-            position: absolute;
-            padding-left: 11%;
-            top: 9%;
-            left: 5px;
-        }
-
-        .red {
-            color: red;
-        }
-
-        .font {
-            /* font-size: calc(10vw / 2.6); */
-        }
-
-        .sinput {
-            height: 4%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            padding: 12px;
-            background-color: #fff;
-            border-bottom: 2px solid #ccc;
-            z-index: 100;
-        }
-
-        .sinput input {
-            width: 20%;
-            height: 100%;
-            /* font-size: calc(10vw / 2.6) !important; */
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            text-size-adjust: none;
-            -webkit-appearance: none;
-        }
-
-        #qian {}
-
-        button {
-            display: inline-block;
-            padding: 10px 20px;
-            /* font-size: calc(10vw / 2.6); */
-            border: none;
-            background-color: #226490;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .custom-button:hover {
-            background-color: #2980b9;
-        }
-
-        #dmimi {
-            width: 100vw;
-            background: to left;
-            background: linear-gradient(to left top, #ffeff8, #fff9fd, #ffffff);
-            display: none;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .dmimiIn {
-            width: 90%;
-            background-color: rgb(236 245 255 / 40%);
-            margin: auto;
-            padding: 10px;
-            box-sizing: border-box;
-            box-shadow: 0px 0px 10px rgb(8 8 8 / 16%);
-        }
-
-        p {
-            color: #414141;
-            font-family: cursive;
-            font-size: 15px;
-            line-height: 2;
-            margin-bottom:30px;
-        }
-
-        .popup-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(255 243 245 / 70%);
-            z-index: 999;
-        }
-
-        .popup {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            text-align: center;
-        }
-
-        .popup span {
-            display: block;
-            font-size: 20px;
-            margin-bottom: 10px;
-            font-family: monospace;
-        }
-
-        .popup button {
-            display: block;
-            margin: 10px auto;
-            padding: 8px 16px;
-            background-color: #80889a;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 18px;
-        }
-        .mimibtn{
-            background-color: #fc8daf !important;
-        }
-
-        .popup button:hover {
-            background-color: #ff3882;
-        }
-        #ready{
-            display: none;
-        }
+        
     </style>
+<link href="../zhouyi.css"type="text/css" rel="stylesheet" />
+<link href="../style.css"type="text/css" rel="stylesheet" />
 </head>
 
 <body>
@@ -242,7 +26,7 @@
             </div>
             <div class="popup" id="ready">
                 <span>要在一个安静的环境观看哦</span>
-                <button class="mimibtn" onclick="mimi()">好的，我知道啦</button>
+                <a class="mimibtn" href="./XinXin.html">好的，我知道啦</a>
             </div>
         </div>
     </div>
@@ -250,6 +34,7 @@
         <div class="sinput">
             <span class="font">请输入要查询的内容:</span><input type="text" id="search">
             <button onclick="toSearch()">查询</button>
+            <button onclick="to64()">64卦详解</button>
         </div>
         <div id="baguaCon" class="flexCenter">
             <!-- //八卦 -->
@@ -258,7 +43,6 @@
             </div>
             <div id="con">
                 <div id="qian" class="guaCons">
-                    <div style="width: 656px; margin: 0; padding: 0; height: 0;"></div>
                     <p><span id="GL0">乾卦含义</span></p>
                     <p><span
                             id="GL1">老成、激烈、活动、迈进、决断、威严、功勋、同一、统帅、摄政、老人、久德、行人、扩大、发光、率性、惩罚、愤怒、侵略、制裁、强制、冷酷、过份、轻视、压抑、灾难、跋扈、专利、独善、独霸、死丧等。</span>
@@ -285,7 +69,7 @@
                     <p><span id="GL9">场所：建筑物、皇宫、京城、都市、博物馆、寺院、名胜、古迹、政府机构、大会堂、广场、车站、弯曲的大道、郊野、远处、学校楼。</span></p>
                 </div>
                 <div id="dui" class="guaCons">
-                    <div style="width: 656px; margin: 0; padding: 0; height: 0;"></div>
+                    <div></div>
                     <p><span id="GL0">兑卦像意</span></p>
                     <p></p>
                     <p><span
@@ -318,7 +102,7 @@
                     </p>
                 </div>
                 <div id="li" class="guaCons">
-                    <div style="width: 656px; margin: 0; padding: 0; height: 0;"></div>
+                    <div></div>
                     <p><span id="GL0">离卦</span></p>
                     <p><span
                             id="GL0">华丽、鲜艳、文明、礼节、明察、磊落、发现、扩张、蔓延、外强、中干、焦躁、撒谎、干枯、枯燥、明、进升、煽动、排斥、抗拒、否定、批判、流行、检举、侦察、轻浮、显示、自满、甜言蜜语、抗上、依附、空虚等。</span>
@@ -339,7 +123,7 @@
                     </p>
                 </div>
                 <div id="zhen" class="guaCons">
-                    <div style="width: 656px; margin: 0; padding: 0; height: 0;"></div>
+                    <div></div>
                     <p><span id="GL0">震卦</span></p>
                     <p><span id="GL1">震卦初爻为阳爻，二、三爻为阴爻，其数四，五行属木，居东方，色碧青。“震为雷，为龙。为玄黄。为青、为大途大马路、为宗子、为决断躁动、为小青竹、为芦苇；其于马也、为善鸣、，其于稼也、为反生
                             果实在下如为花生等 其究为健。”</span></p>
@@ -378,7 +162,7 @@
                     </p>
                 </div>
                 <div id="xun" class="guaCons">
-                    <div style="width: 656px; margin: 0; padding: 0; height: 0;"></div>
+                    <div></div>
                     <p><span id="GL0">巽卦</span></p>
                     <p><span
                             id="GL1">巽卦初爻为阴爻，二阳爻在上，其数五，五行属木、东南方，色白。“巽为木，为风、为长女、为绳直、为工、为白、为长、为高、为进退、为木果、为实；其于人也，为寡发、为多白眼、为利市三倍，其究为躁卦。”</span>
@@ -418,7 +202,7 @@
                     <p><span id="GL13">场所、建筑物：竹林草原</span></p>
                 </div>
                 <div id="kan" class="guaCons">
-                    <div style="width: 656px; margin: 0; padding: 0; height: 0;"></div>
+                    <div></div>
                     <p><span id="GL0">坎卦</span></p>
                     <p><span
                             id="GL1">坎卦阳爻居中，上下各为阴爻，五行属水居北方，色黑。“坎为水，为沟渎、为隐伏、为矫柔、为弓轮，其于人也“为忧、为心痛、为耳痛为血疾、为床。其于马也，为美脊，为下首、为薄蹄、为曳；其于舆也，为通、为月、为盗；其于木也，为坚多心。”</span>
@@ -457,7 +241,7 @@
                     </p>
                 </div>
                 <div id="gen" class="guaCons">
-                    <div style="width: 656px; margin: 0; padding: 0; height: 0;"></div>
+                    <div></div>
                     <p><span id="GL0">艮卦</span></p>
                     <p><span
                             id="GL0">禁止、阻滞、阻挡、静止、慎守、标准、独立、转变、转折、讼狱、笃实、消亡、叮咛、等待、厚重、表皮背、至少、顶多界限、抑止、珍固、安居、沉着、冷静、更替、隐藏、固执、主观、率性、“分水岭”、重新开始。</span>
@@ -477,7 +261,7 @@
                     </p>
                 </div>
                 <div id="kun" class="guaCons">
-                    <div style="width: 656px; margin: 0; padding: 0; height: 0;"></div>
+                    <div></div>
                     <p><span id="GL0">坤卦之具体类象</span></p>
                     <p><span
                             id="GL1">人物：皇妃、臣子、国民大众、祖母、老母、后母、妻子、女主人、妇女、阴气盛之人、忠厚之人、大腹之人、农民俗子、小气者、消极者、胆怯者、房地产者、泥瓦工、小人、尸体。</span>
@@ -504,51 +288,97 @@
             </div>
         </div>
     </div>
-    <div id="dmimi" class="">
-        <div class="dmimiIn">
-            <p>
-                宝宝，你今天是不是也很累呀？ 最近这段时间感觉你都没有以前开心了，每天都看起来很辛苦，脸色也不太好了。其实就算你不讲，我也能感觉到，有时候你不说话，一个人发呆玩手机，看起来满脸都是疲惫。
-            </p>
-            <p>
-                我其实很担心你，但是我知道这是你目前迫不得已才过的生活。我也知道你一直在为了以后的生活努力着。我只能尽量做你的小开心果，让你每天的生活可以多一点颜色~可是我又担心自己有时候情绪不好会影响你，所以我有时候会不愿意告诉你我的不开心，因为我不想给你增加负担，并不是因为不想跟你分享哦，只是因为我太珍惜你了。我珍惜你的笑容，珍惜你的好奇心，珍惜跟你在一起的每个瞬间。
-            </p>
-            <p>
-                跟你在一起的时候，我总是会觉得时间太快，总是会突然有点惆怅。因为感觉还没有好好看看你的样子，第二天就来了。上次在电影院的时候，我看着你的眼睛，看你看电影的时候睫毛跟着眼睛一眨一眨，感觉你真好看，然后就突然很难过，因为我没有那么多的时间跟你相处，我真想每天都能静静的在你身边陪着你，就像看电影的时候一样，真希望能够有很多很多完整的时间属于我们，然后一点点的看着时光流逝，看着太阳一点点的升起来，再落下去。
-            </p>
-            <p>
-                就像我们上次去海洋馆看到的水母一样，看见它们在灯光里慢慢的游动，他们在无所事事的享受着时间。我好希望有一天我们可以跟它们一样，我们在阳光下一起发呆，一起晒太阳。我们可以一起种花，一起悠闲的挽着手逛早市，逛花鸟鱼虫市场。我希望我们是自然睡醒，一切都那么自然。
-            </p>
-            <p>
-                上周末当你说要去逛早市，我猜到其实你是想要满足我的愿望，但是你太累了，我也知道你很需要休息，什么都不做只是躺在家里的那种休息。我也知道你也有很多想和我一起做的事，你还有很多很多你想要去做的有意思的事，可是你的疲惫让你觉得有心无力了。其实我都知道。
-            </p>
-            <p>
-                那天晚上我问你想什么时候娶我，你后来说 你不希望我跟你在一起什么都没有，我没有说话。其实我只是害怕，我害怕我们会像很多其他的情侣一样，原本一起憧憬着未来，一起在奋斗中等待，可是等着等着就淡了。
-            </p>
-            <p>
-                我从来没有过这种感觉，这种迫切的想要和一个人共度一辈子，想把一个人留在身边，又期待，又担心的感觉。我期待能快点有那一天，能跟你一起慢慢的消耗着时光，但是我又害怕它来的太快，一辈子就结束了，我更害怕它不来。
-            </p>
-            <p>
-                更害怕你有一天就不爱我了。总之我有好多好多的害怕，可是我从来都不想说，我总觉得说出来会显得自己很卑微。我终于理解了张爱玲说的，爱一个人，会卑微到尘埃里，然后开出花来。也许就是这个意思把。
-            </p>
-            <p>
-                可是我总觉得，爱这个词很单薄甚至有点虚假。可能因为这个时代人们说爱太过随意，让这个字原本很厚重的含义变得越来越单薄。
-            </p>
-            <p>
-                我更愿意把它说成感激。你给了我太多原本我期望却又得不到的东西。你的耐心你的包容，你对我的关心对我的照顾，还有你像父亲一样的安全感和沉稳成熟，像孩子一样可爱天真，又像朋友一样和我互相陪伴互相鼓励。这些我都非常感激，也非常珍惜。
-            </p>
-            <p>
-                其实我写这些的时候，心里挺害怕的。因为我总是在做一个虚伪的人。我总觉得表达自己的感情就像是在示弱，可是我从来都不想示弱，所以宁愿说假话谎话或者模棱两可的话。可是我真的很想拥有你以后的人生，你每天早晨睡着的样子，你萌生的每一个奇怪的念头，你发现的每一件无聊的小事，你以后长的每一根白头发，我都不想错过，都很想很想拥有。
-            </p>
-            <br>
-            <br>
-            <p>七夕快乐，我的男孩。希望你开心~</p>
-        </div>
+    <div class="zhlist">
+        <table class="gualist">
+               <tbody><tr> 
+               <td><img src="../img/zh.png" title="上下卦" height="72" width="50"></td>
+               <td><img src="../img/qian.png" title="乾天" height="72" width="50"></td>
+               <td><img src="../img/dui.png" title="兑泽" height="72" width="50"></td>
+               <td><img src="../img/li.png" title="离火" height="72" width="50"></td>
+               <td><img src="../img/zhen.png" title="震雷" height="72" width="50"></td>
+               <td><img src="../img/xun.png" title="巽风" height="72" width="50"></td>
+               <td><img src="../img/kan.png" title="坎水" height="72" width="50"></td>
+               <td><img src="../img/geng.png" title="艮山" height="72" width="50"></td>
+               <td class="noBBorder"><img src="../img/kun.png" title="坤地" height="72" width="50"></td></tr>
+               <tr><td><img src="../img/qian.png" title="乾天" height="72" width="50"></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4103.html">乾卦</a></p><p><a href="./to64Video.html?na=乾">乾为天</a></p><p>刚健中正</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4183.html">夬卦</a></p><p><a href="./to64Video.html?na=泽天夬">泽天夬</a></p><p>决而能和</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4141.html">大有卦</a></p><p><a href="./to64Video.html?na=火天大有">火天大有</a></p><p>顺天依时</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4173.html">大壮卦</a></p><p><a href="./to64Video.html?na=雷天大壮">雷天大壮</a></p><p>壮勿妄动</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4112.html">小畜卦</a></p><p><a href="./to64Video.html?na=风天小畜">风天小畜</a></p><p>蓄养待进</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4108.html">需卦</a></p><p><a href="./to64Video.html?na=水天需">水天需</a></p><p>守正待机</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4159.html">大畜卦</a></p><p><a href="./to64Video.html?na=山天大畜">山天大畜</a></p><p>止而不止</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4126.html">泰卦</a></p><p><a href="./to64Video.html?na=地天泰">地天泰</a></p><p>应时而变</p></td></tr><tr>
+               <td><img src="../img/dui.png" title="兑泽" height="72" width="50"></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4113.html">履卦</a></p><p><a href="./to64Video.html?na=天泽履">天泽履</a></p><p>脚踏实地</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4200.html">兑卦</a></p><p><a href="./to64Video.html?na=兑">兑为泽</a></p><p>刚内柔外</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4177.html">睽卦</a></p><p><a href="./to64Video.html?na=火泽睽">火泽睽</a></p><p>异中求同</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4195.html">归妹卦</a></p><p><a href="./to64Video.html?na=雷泽归妹">雷泽归妹</a></p><p>立家兴业</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4255.html">中孚卦</a></p><p><a href="./to64Video.html?na=风泽中孚">风泽中孚</a></p><p>诚信立身</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4244.html">节卦</a></p><p><a href="./to64Video.html?na=水泽节">水泽节</a></p><p>万物有节</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4181.html">损卦</a></p><p><a href="./to64Video.html?na=山泽损">山泽损</a></p><p>损益制衡</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4146.html">临卦</a></p><p><a href="./to64Video.html?na=地泽临">地泽临</a></p><p>教民保民</p></td></tr><tr>
+               <td><img src="../img/li.png" title="离火" height="72" width="50"></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4140.html">同人卦</a></p><p><a href="./to64Video.html?na=天火同人">天火同人</a></p><p>上下和同</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4189.html">革卦</a></p><p><a href="./to64Video.html?na=泽火革">泽火革</a></p><p>顺天应人</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4169.html">离卦</a></p><p><a href="./to64Video.html?na=离">离为火</a></p><p>附和依托</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4196.html">丰卦</a></p><p><a href="./to64Video.html?na=雷火丰">雷火丰</a></p><p>日中则斜</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4176.html">家人卦</a></p><p><a href="./to64Video.html?na=风火家人">风火家人</a></p><p>诚威治业</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4257.html">既济卦</a></p><p><a href="./to64Video.html?na=水火既济">水火既济</a></p><p>盛极将衰</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4149.html">贲卦</a></p><p><a href="./to64Video.html?na=山火贲">山火贲</a></p><p>饰外扬质</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4175.html">明夷卦</a></p><p><a href="./to64Video.html?na=地火明夷">地火明夷</a></p><p>晦而转明</p></td></tr><tr>
+               <td><img src="../img/zhen.png" title="震雷" height="72" width="50"></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4153.html">无妄卦</a></p><p><a href="./to64Video.html?na=天雷无妄">天雷无妄</a></p><p>无妄而得</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4144.html">随卦</a></p><p><a href="./to64Video.html?na=泽雷随">泽雷随</a></p><p>随时变通</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4148.html">噬嗑卦</a></p><p><a href="./to64Video.html?na=火雷噬嗑">火雷噬嗑</a></p><p>刚柔相济</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4192.html">震卦</a></p><p><a href="./to64Video.html?na=震">震为雷</a></p><p>临危不乱</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4182.html">益卦</a></p><p><a href="./to64Video.html?na=风雷益">风雷益</a></p><p>损上益下</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4106.html">屯卦</a></p><p><a href="./to64Video.html?na=水雷屯">水雷屯</a></p><p>起始维艰</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4164.html">颐卦</a></p><p><a href="./to64Video.html?na=山雷颐">山雷颐</a></p><p>纯正以养</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4152.html">复卦</a></p><p><a href="./to64Video.html?na=地雷复">地雷复</a></p><p>寓动于顺</p></td></tr><tr>
+               <td><img src="../img/xun.png" title="巽风" height="72" width="50"></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4184.html">姤卦</a></p><p><a href="./to64Video.html?na=天风姤">天风姤</a></p><p>天下有风</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4167.html">大过卦</a></p><p><a href="./to64Video.html?na=泽风大过">泽风大过</a></p><p>非常行动</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4190.html">鼎卦</a></p><p><a href="./to64Video.html?na=火风鼎">火风鼎</a></p><p>稳重图变</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4171.html">恒卦</a></p><p><a href="./to64Video.html?na=雷风恒">雷风恒</a></p><p>恒心有成</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4198.html">巽卦</a></p><p><a href="./to64Video.html?na=巽">巽为风</a></p><p>谦逊受益</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4188.html">井卦</a></p><p><a href="./to64Video.html?na=水风井">水风井</a></p><p>求贤若渴</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4145.html">蛊卦</a></p><p><a href="./to64Video.html?na=山风蛊">山风蛊</a></p><p>振疲起衰</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4186.html">升卦</a></p><p><a href="./to64Video.html?na=地风升">地风升</a></p><p>柔顺谦虚</p></td></tr><tr>
+               <td><img src="../img/kan.png" title="坎水" height="72" width="50"></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4109.html">讼卦</a></p><p><a href="./to64Video.html?na=天水讼">天水讼</a></p><p>慎争戒讼</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4187.html">困卦</a></p><p><a href="./to64Video.html?na=泽水困">泽水困</a></p><p>困境求通</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4263.html">未济卦</a></p><p><a href="./to64Video.html?na=火水未济">火水未济</a></p><p>事业未竟</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4180.html">解卦</a></p><p><a href="./to64Video.html?na=雷水解">雷水解</a></p><p>柔道致治</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4212.html">涣卦</a></p><p><a href="./to64Video.html?na=风水涣">风水涣</a></p><p>拯救涣散</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4168.html">坎卦</a></p><p><a href="./to64Video.html?na=坎为水">坎为水</a></p><p>行险用险</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4107.html">蒙卦</a></p><p><a href="./to64Video.html?na=山水蒙">山水蒙</a></p><p>启蒙奋发</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4110.html">师卦</a></p><p><a href="./to64Video.html?na=地水师">地水师</a></p><p>行险而顺</p></td></tr><tr>
+               <td><img src="../img/geng.png" title="艮山" height="72" width="50"></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4172.html">遁卦</a></p><p><a href="./to64Video.html?na=天山遁">天山遁</a></p><p>遁世救世</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4170.html">咸卦</a></p><p><a href="./to64Video.html?na=泽山咸">泽山咸</a></p><p>相互感应</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4197.html">旅卦</a></p><p><a href="./to64Video.html?na=火山旅">火山旅</a></p><p>依义顺时</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4256.html">小过卦</a></p><p><a href="./to64Video.html?na=雷山小过">雷山小过</a></p><p>行动有度</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4194.html">渐卦</a></p><p><a href="./to64Video.html?na=风山渐">风山渐</a></p><p>渐进蓄德</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4179.html">蹇卦</a></p><p><a href="./to64Video.html?na=水山蹇">水山蹇</a></p><p>险阻在前</p></td>
+               <td><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4193.html">艮卦</a></p><p><a href="./to64Video.html?na=艮">艮为山</a></p><p>动静适时</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4142.html">谦卦</a></p><p><a href="./to64Video.html?na=地山谦">地山谦</a></p><p>内高外低</p></td></tr><tr>
+               <td class="noBBorder"><img src="../img/kun.png" title="坤地" height="72" width="50"></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4127.html">否卦</a></p><p><a href="./to64Video.html?na=天地否">天地否</a></p><p>不交不通</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4185.html">萃卦</a></p><p><a href="./to64Video.html?na=泽地萃">泽地萃</a></p><p>荟萃聚集</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4174.html">晋卦</a></p><p><a href="./to64Video.html?na=火地晋">火地晋</a></p><p>求进发展</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4143.html">豫卦</a></p><p><a href="./to64Video.html?na=雷地豫">雷地豫</a></p><p>顺时依势</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4147.html">观卦</a></p><p><a href="./to64Video.html?na=风地观">风地观</a></p><p>观下瞻上</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4111.html">比卦</a></p><p><a href="./to64Video.html?na=水地比">水地比</a></p><p>诚信团结</p></td>
+               <td class="noBBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4150.html">剥卦</a></p><p><a href="./to64Video.html?na=山地剥">山地剥</a></p><p>顺势而止</p></td>
+               <td class="noBBorder noRBorder"><p><a href="https://m.zhouyi.cc/zhouyi/yijing64/4105.html">坤卦</a></p><p><a href="./to64Video.html?na=坤">坤为地</a></p><p>柔顺伸展</p></td></tr>
+               </tbody></table>
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        function ddbtn(){
-            $("#xuanze").css("display","none");
+        function ddbtn() {
+            $("#xuanze").css("display", "none");
             // $("#ready").css("display","block");
             $("#ready").slideDown();
         }
@@ -559,6 +389,9 @@
         }
         function bagua() {
             $(".container").css("display", "block").siblings().hide();
+        }
+        function to64() {
+            $(".zhlist").css("display", "block").siblings().hide();
         }
         // var data = {
         //     "乾": {
