@@ -10,54 +10,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>关于</title>
     <style>
-        
+        #ready {
+            display: none;
+        }
+
+        #dmimi {
+            display: none;
+        }
+
+        .pinput {
+            height: 30px;
+            border-radius: 20px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            color: #414141;
+            font-size: 19px;
+        }
     </style>
-<link href="../zhouyi.css"type="text/css" rel="stylesheet" />
-<link href="../style.css"type="text/css" rel="stylesheet" />
+    <link href="../zhouyi.css" type="text/css" rel="stylesheet" />
+    <link href="../style.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- 鑫鑫 -->
+    <div class="popup-container">
+        <div class="popup" id="q1">
+            <span>请输入解锁密码</span>
+            <input class="pinput" oninput="jsinput()">
+        </div>
+        <div class="popup" id="ready">
+            <span>要在一个安静的环境观看哦</span>
+            <button class="mimibtn" onclick="mimi()">好的，我知道啦</a>
+        </div>
+    </div>
+    <!-- -->
     <div id="dmimi" class="">
         <div class="dmimiIn">
             <p>
-                宝宝，你今天是不是也很累呀？ 最近这段时间感觉你都没有以前开心了，每天都看起来很辛苦，脸色也不太好了。其实就算你不讲，我也能感觉到，有时候你不说话，一个人发呆玩手机，看起来满脸都是疲惫。
+                BCENYzIqbe0O6YLDWdLlcWOILxHJ2U+FzFyYkuc/iCKwF80i4Tqgr0bMBmVXGnpLaNrsmN339f+XAqylsQ0d5pV9W5Lf0EIi75BeFAOO0psSh4PDYgAcysiD8oWT5wwQg9y71iJ0VsIjt0WGJFrWYg9oS77uKetkP+vE5T+iPYgAX7MmKXjQc2MOlT4tfjvOnRezTT/3alin/QrqH3suOFWa6b31mVYmxJ7Ji0V7ytO+trUhAHfnu//XYOXO6j+Lqt3/UetzxN62/8QsREiIBBa/7LGAHF3XKkTz952cUsKS10nUUChI4721tm8lsf8BXD1H4QnngfYH1qhAUhIQxeG+bG6OazVY3tumDWH75O/YT7AtfFAuJw==
             </p>
             <p>
-                我其实很担心你，但是我知道这是你目前迫不得已才过的生活。我也知道你一直在为了以后的生活努力着。我只能尽量做你的小开心果，让你每天的生活可以多一点颜色~可是我又担心自己有时候情绪不好会影响你，所以我有时候会不愿意告诉你我的不开心，因为我不想给你增加负担，并不是因为不想跟你分享哦，只是因为我太珍惜你了。我珍惜你的笑容，珍惜你的好奇心，珍惜跟你在一起的每个瞬间。
+                /2mBYqi762aobNsSmm0O+SQ91PzZ7Y9e/qpSem+AqhTHdiLasUzQg4uj8YeuTQ0iQh8aOS0JRQKuiI9VYuaY8TFfTpsAxDok9V5lrf62UnRlGSfqk+RtnWnmvuzAui6czu7ec/3NiGARUfy1kkFb3nQbkNFmyxKO9V5lrf62UnR7nErD3IPwBAOqbeaXkptlpdE69SZp5/mBfinrGp+VIVVpmUb2E3QPhCpbDzsmUFAJkRZObyEdSkYFTpqnllGU9V5lrf62UnR16TKpn6+ekuLwU6NRF53YGT3T7YCm1xAypZnIHudlXN4LgBfl7Rn/CdGrM8tzyZJl8R5GVqG5l9zbHbRngGThooaKoiRcrrcx2zM0jpeE5Md6zGb0wRpwU90CUUKn3Nm1A88d/a9M2kCPbyovqJ1X8UxmgFom3IxDZws+HjtOUmDs+OfTI7R1aucyjEFkThtvC3mmaOIyIYa7v3rawg02ZTEwsrk8GoHInaEa31be7jWMr00gOu3aUWJM2I2b+dq8Lqzt5dRbT0QXNywtIhG6o76dQlZZPXD12sMZCbpda61zgpCymaxlhqnWqGwGsUuVI/IK+FmagudjfQO0/HyyQv8xoxWAZdmDJhr+zE+PuIQ0DM+xnBVNfBQqSRIpancDxbZIlhaOg7RFF9ruHB1jrakKWsMB8lNH1npnxheYMr00Hv7DiRp3V7bAEfNNfa8=
             </p>
             <p>
-                跟你在一起的时候，我总是会觉得时间太快，总是会突然有点惆怅。因为感觉还没有好好看看你的样子，第二天就来了。上次在电影院的时候，我看着你的眼睛，看你看电影的时候睫毛跟着眼睛一眨一眨，感觉你真好看，然后就突然很难过，因为我没有那么多的时间跟你相处，我真想每天都能静静的在你身边陪着你，就像看电影的时候一样，真希望能够有很多很多完整的时间属于我们，然后一点点的看着时光流逝，看着太阳一点点的升起来，再落下去。
+                N/TRpsOCS6sojSn8eW91VKXjdGHEPNjY20S6quTk7Vyo+W/+vuBwsXhrdPGKz4d9Jk7HUMaSmYbjYpAU76TGCXsvfFPmRj4IZF0ZZONmWBajOIuKNC1hHdcp0POZaGEIuujRcSIlIZIEUHJ6KpftwfWzCr6OLbnRnywutqbyUFKSinHzMtjdluKMY2IA99LfOsh/UpCpV7NkynkYFsK+8jrEuHFta2BO+Vp120NH7l1EbQACjRzoRrUX0Nl/EdKMAOsq+T1tTinuekgPUJVdDraffr7bEp2ghspnlA+T6hGyzkKtj2sBAalGPWDGp9bbvyVUJ/p2u8/AYnGObBx98p6a05D6BUQ5GkS8+0BuIotepxYW+Nx/c7jAXkc6aCSFj6bfWwWkpAuSRNpthh6spUkQINRAt2xcZL4v9UUGuzpNn7/t/NxiUW7DWFJVBXeBCjJkxKS/lBiDOWZT9Z1fAD4+/KnD2Dq7ZLXC7kBMLeX2rHyEpZWSUx+fQyc/FDVNmODjLCj5uY8PIYotzT+YBGNpkkWPkQf+LahPhoz7jh4W4KwmHMUcK8b3ciPQ0vYCeW/zZHpP6Wt4LuUcoXcpIcFsRI4MxeN04IPapBL+xS1poOru7OGsd3VjTiSlOuhbF1ywiIHbbsC+sLceD68LVIktDOL0aIR59GUx6+khTGvqR2s2RqIrJzjUzCFxyo4zVTdjNFyYtBNaQ1SUyv7hNH9Ryv38QByFCDWbcrFaaxjxnQEEiYCItPGxoKeb5tD5Xs0nZOn7VEa5Qiw7y8rJ/7hG3ub4IW4PpVjHaAbmKJc=
             </p>
             <p>
-                就像我们上次去海洋馆看到的水母一样，看见它们在灯光里慢慢的游动，他们在无所事事的享受着时间。我好希望有一天我们可以跟它们一样，我们在阳光下一起发呆，一起晒太阳。我们可以一起种花，一起悠闲的挽着手逛早市，逛花鸟鱼虫市场。我希望我们是自然睡醒，一切都那么自然。
+                mJgokfkTX2QFk5TJNlp+5wD/7DV7AlTlS6M2/XaDXbYQ3WNhUjCJnc9u26ymiGhJDzS/Ear2GIJWyE21maoOXnTIfBvQqFqPmrADZoBGc+pdWiOkAooMcKduMbss1N+nTlpJ0MUFf+u3D7R5Wtix5Vu2VbFzGh8oniauf+vRWYe5St6ckGF+Mvh4w+Uo3oWqDVHCIiPS5ez/DVLefR/dALziIdkXW+e0QukXXYdZJRLRwKvJW4YdT2kwe6VSiXutpSX+2MIZdxCvvz7X5b+/PJ8K2+9vbZoDqwxmoVeXLy7+G2yxjsZI6fho0k4shmTbuQ0geS6LOy2lbZWcs+PXq7Hf8eD4hyRULltM+MvX/c2TPD0KqA/FW/UYf3Mcd+o4rwQRXbZ+1ZVHSQXeBE4NkgK7GajTbx7blX14nCPlWxaIzzw3nyF5K54r8YwCpLAC4bEpqnhTSSHpqvazmbsaRjY6wHVkZzDWPypCzN9sFJzxFMscNMIkHppweudIbZU7Ao9qT+8eyMA=
             </p>
             <p>
-                上周末当你说要去逛早市，我猜到其实你是想要满足我的愿望，但是你太累了，我也知道你很需要休息，什么都不做只是躺在家里的那种休息。我也知道你也有很多想和我一起做的事，你还有很多很多你想要去做的有意思的事，可是你的疲惫让你觉得有心无力了。其实我都知道。
+                N4CEAqSKHHTOwSQCZesLQ4emKM7Lh3snbgyfFUXRKUSZwMyKkhbml7qjb22isFW3YzGrpl5MuCskN2ZytD8Ic6h/e2L5mAKVG7ghaqu31cDS2e6b8aJ5bB78OmHkdKuiht8BseIPlg0vbgiLfsm18wRh65NSwbbs7M+ZSC9WnXcGfuJl6+zLmxxcAeJ6wNTZRcXANTq+H7mUMgKpuWfJJY72HbrFYSMiE951ERecgq2Un20SFYcYcNG+k0F0Tg1HBubn+N/JxkhFBRvZIZd7BmuDAcbW952gaYSYlqS+//eoq5xE7brhImex/OoAmuN1ul8HU0boeFDg3TKVepeQec2mvoSQXycWpaau16RWw3ckszGmY/YN9AG/upOTJAd0+8Cij9o5Q4Iw9wq3iDvnRb+BuWtUjmpL5tr/5sVikVgqFtrzAz0J5fD3+Dep+NPxeoP989lJGLpdoFIWZlyWa2ClGRYsf1NR21rCj/6kG4HXAtYjS9Swng==
             </p>
             <p>
-                那天晚上我问你想什么时候娶我，你后来说 你不希望我跟你在一起什么都没有，我没有说话。其实我只是害怕，我害怕我们会像很多其他的情侣一样，原本一起憧憬着未来，一起在奋斗中等待，可是等着等着就淡了。
+                AEiC7DNm2Crb9NmPa0kAKzMnqmqsawpzZTBdrJNClBkBTN25nLddiDeTPf00ZM/Ynt+sBLEimxmBwTRGK0ZEngmtiBT+ntwFajOn85ZjJh9gn0WAPvL1hvr3YZuQFQVNOjldppO6vcsEuQ6LSVkuM/uGpqJG5Vn4hqmo/Vz60Jd6K4Y4eSXtyUN2OhflHkyZ9swdIzkNCzt4rsxTBRbtRh3i6PBGj/1kjYQVahY2T9Tt+/0t40RRUtbiYOBenraEtP4luWrdf48vt714zmyMjF3MZ61OoRgehCnd2V+bx61h+/niTLpKLI7GC3iKwmQ2ACFlwwy5GDEqnAa//GOm2y6x+yUqPk5VsVNIZXxXDmsQwKaq5PfkkggOCVBfIp/H
             </p>
             <p>
-                我从来没有过这种感觉，这种迫切的想要和一个人共度一辈子，想把一个人留在身边，又期待，又担心的感觉。我期待能快点有那一天，能跟你一起慢慢的消耗着时光，但是我又害怕它来的太快，一辈子就结束了，我更害怕它不来。
+                bfoppkKNdkERKJXOGdo48+Zpq5EotiOw4eeln5yc+vjdrMuuKb3QnNrPhjna6AexQfP9sykrW39Md2twMd4MZCTAlJv7lR9Pna9LdgCCHFp9d8juzQAnZNZt9PvGgtXIcAA1JradiE/S0/xUZEV9T5Wx76QwG3amYJPOMionaJIJS2mcF0VT66TVVd0GK4gmYHnmLm7fJ/BFMHWz3oa8hCczQJunSKFy3OlffSK9DG33m/83T8WPudlB7BUwCFaZ58+lvWSNuW/ymLEAEKo0Ne5sBhcv/mYap6N4CcgVqYA3GeimM7TZNptNK9pE0hEdDlnuJi18c4n0StSc3/nNA7hWkEVPjhCuFIsw8kdkSdYbETB8JbtLrpdQ/+8p22pRPBimTj3y2z9gLnw5cZMSwyuObkPW1RQB
             </p>
             <p>
-                更害怕你有一天就不爱我了。总之我有好多好多的害怕，可是我从来都不想说，我总觉得说出来会显得自己很卑微。我终于理解了张爱玲说的，爱一个人，会卑微到尘埃里，然后开出花来。也许就是这个意思把。
+                zgl8fMyDMaMXbEPyM1l/KIcE2iQz/BQGL9lU/z7n/q1OqMOLlNqr5LP8UDzBTENlR1P1xKTdS/xq2+mTukONX0lSgdbBpXQ0A29zTRl6RzgFJcvqzVK69m+Cr+C0SN9lriqpVD6GPsNUxOwsDcHQ3eNPYxTeAB/N+6pacepap+ZSx0TcPcozMvJnIiRacLsLfDBW+gjDyq/akOzXLS4Wz1qLW8HiUpeslIMEiUp1GODMZPeQrWJaG3ThQSla5blWLaDuSFUB98iiqWXJVsesB8ZMcrj1sgOS+spplFqZhSoQSek097Y/vYTUvc+zFZL1e0Rt0pr8lAYGdpeUaJYJcCaPLZrcNLam6CKDSjf3btay8imtE0MU8Q==
             </p>
             <p>
-                可是我总觉得，爱这个词很单薄甚至有点虚假。可能因为这个时代人们说爱太过随意，让这个字原本很厚重的含义变得越来越单薄。
+                zS+vOOK4GaIaB2SaYIF/XEKeBRXtyXAPa0retTpfLzTzuoS/BqJmn0wQ2vfcrsHfhncUXBV4oZEQRt3/Q3GmAzOlfRRFJP/pxdIGpX6llUou7OU9WYyhBtXavdbMnuWm0fedQpQOoK8IU3BKALIRkVq+4ughMqOoauOdW0kLOhjH8JMfxvibEti7l+MMT4dWmCjJ+QBzSL7N+6VXITbQj+j5KW2lpmMNOcRGAJSSZ88=
             </p>
             <p>
-                我更愿意把它说成感激。你给了我太多原本我期望却又得不到的东西。你的耐心你的包容，你对我的关心对我的照顾，还有你像父亲一样的安全感和沉稳成熟，像孩子一样可爱天真，又像朋友一样和我互相陪伴互相鼓励。这些我都非常感激，也非常珍惜。
+                1iGm7EkVH587vwHa35rLAw4M6EtVsiOWhNK3jOZO3KYrDJ3u40fBYG1MLLknM64ogqkyNDpocxCCs+3eFm+Jxg4kMChcvNLIaDwaIbP6SZDoOkp1NN6shT46u/hwune7cPbgz5bW9JQvJ64+qbph7atEqavqfVFkiz6TPqJukVbxsfRv863GTm+zsV5YgghVPlbFTLSCEpvul5vsfIb0L9z7d2Vxbp+zPvYDP12pXTZheO4rvjiGZG7uPrXIivfJoYczJkxPpsVxONPCIOFOzxTTUNk8uGatdna9ownAiAbvmLwnnQYuXbyN7EgnpTlPeFHkmLnBRWjuHp4VSlvZvpDkLGGtBP0WEjx8QosijjUh3ux5rB9zdNgp/7kiDjKENrOyz7tsCZKtq94WsFKrb4GLHv1wNHagEeDrEEkHhW2EAvJ2z0/jf6QCqmLvOSnFAo9qT+8eyMA=
             </p>
             <p>
-                其实我写这些的时候，心里挺害怕的。因为我总是在做一个虚伪的人。我总觉得表达自己的感情就像是在示弱，可是我从来都不想示弱，所以宁愿说假话谎话或者模棱两可的话。可是我真的很想拥有你以后的人生，你每天早晨睡着的样子，你萌生的每一个奇怪的念头，你发现的每一件无聊的小事，你以后长的每一根白头发，我都不想错过，都很想很想拥有。
+                viHoSyChzXELoUgClF6IOn2rl3YjhWpXWcbJZtJTNRgo+ND1Ym9/2GGy1zfMbXSmevA2TxkWDrO24JefV21JBpCtafRSKhno8BmctzrF4BkkbbjlS4r8bRO2K0UfMXpZ5qO/MKs+onyjwYNS9kEhV/qI5N3TX6f85Phun07k90753LZQX6ezrwJOs83P0qMSA29zTRl6RzgFJcvqzVK69m+Cr+C0SN9lap4DGg0z8lbydtpzNAZNV4/PtNmJp0MRijtnGzXKIrCBd/vOaS3blNMvDBy0UtDo8f7pHc1rnz0OE8bPAuXD2AXQrxba0C2zxRNT7VqJ24ECMtIw85j42b04cZ7gq1Nadtl/PKRDvx2nEOGo5x5tf5FUL6DwXQ+HS8F/qhy0DMHkJ9SgcN3HxMukX9mVG5CMoFhKXyjsli5WcpWBXMC5ZPUx9WZ45tq7OOuVBjwX6eUJZppbSQdGOwFBJ4jm4ZTx/Mc84lTyeGWUhAYoEyzxDCg3n3Avb8R6wC7MuHulf2pcFtk4kWvd7wjEprxUzcv+khYxGB6bJZgrbou3P2zTkBaY9E7BEMY9fziM6YM4wPm8tz0WV5I4YVAapyxjHnEgFToR/Ch2+qU8xCQ8nCMf8yuObkPW1RQB
             </p>
             <br>
             <br>
-            <p>七夕快乐，我的男孩。希望你开心~</p>
+            <p>MzxmX4q2RYJYs1OI8ukPIjOw4zoEmepbVud7LsADFaMCTHtsCIMX6tW72a/6yd+x</p>
         </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/crypto-js.js"></script>
+<script>
+
+    function ddbtn() {
+        $("#xuanze").css("display", "none");
+        // $("#ready").css("display","block");
+        $("#ready").slideDown();
+    }
+    function mimi() {
+        $("#dmimi").slideDown(2000).siblings().hide();
+        // $(".popup-container").css("display","none");
+        // $("#dmimi").slideUp();
+    }
+    function jsinput(){
+        if($("#q1 input").val() == decryptDes(MIMIKEY1, Thief)){
+            var ps = $("#dmimi").find("p");
+            for (var i = 0; i < ps.length; i++) {
+                var s = ps[i].innerHTML.replace(/\s/g, '');
+				ps[i].innerHTML = decryptDes(s, MIMIKEY);
+			}
+            $("#ready").slideDown().siblings().hide();
+        }
+    }
+</script>
 
 </html>
