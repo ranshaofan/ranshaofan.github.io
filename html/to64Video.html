@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>关于</title>
     <style>
-        p{
+        p {
             display: flex;
         }
     </style>
@@ -20,8 +20,8 @@
 
 <body>
     <div>
-        <video controls width="640" height="360">
-            <source src="" type="video/mp4">
+        <video controls>
+            <source src="../video/乾.mp4" type="video/mp4">
         </video>
         <p>Playback Speed:
             <button onclick="changeSpeed(0.5)">0.5x</button>
@@ -48,11 +48,11 @@
     });
     console.log(paramsObject);
     // 在页面上显示参数
-    var video = document.querySelector('video');
-    var source = document.querySelector('source');
-    video.src="../video/"+paramsObject.na+".mp4";
-    source.src="../video/"+paramsObject.na+".mp4";
-    video.load();
+    // var video = document.querySelector('video');
+    // var source = document.querySelector('source');
+    // video.src = "../video/" + paramsObject.na + ".mp4";
+    // source.src = "../video/" + paramsObject.na + ".mp4";
+    // video.load();
     function changeSpeed(speed) {
         video.playbackRate = speed;
     }
