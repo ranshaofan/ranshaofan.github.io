@@ -49,7 +49,9 @@
     console.log(paramsObject);
     // 在页面上显示参数
     var video = document.querySelector('video');
+    var source = document.querySelector('source');
     video.src="../video/"+paramsObject.na+".mp4";
+    source.src="../video/"+paramsObject.na+".mp4";
     video.load();
     function changeSpeed(speed) {
         video.playbackRate = speed;
