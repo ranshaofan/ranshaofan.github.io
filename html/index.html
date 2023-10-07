@@ -22,7 +22,7 @@
             <div class="popup" id="xuanze">
                 <span>请选择</span>
                 <button class="baguabtn" onclick="bagua()">八卦象义详解</button>
-                <a class="mimibtn" href="./XinXin.html">小董的秘密</a>
+                <a class="mimibtn" href="./XinXin.html">秘密</a>
             </div>
         </div>
     </div>
@@ -478,6 +478,7 @@
             var inStrArr = $("#search")[0].inStrArr || [];
             var val = $("#search").val();
             //把标红的内容清空
+            console.log($("#search")[0].v);
             if ($(".red")[0]) {
                 var snode = $(".red")[0];
                 var redstr = snode.parentNode.innerHTML;
@@ -487,6 +488,7 @@
             }
             //存储当前查询内容，如果不存在v或者是一个新的v
             if (!$("#search")[0].v || $("#search")[0].v != val) {
+                inStrArr = [];
                 $("#search")[0].v = val;
                 //重新查询
                 var spans = $(".guaCons span");
