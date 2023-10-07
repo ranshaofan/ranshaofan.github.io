@@ -16,7 +16,7 @@
 /* 网页端字体大小 */
 @media (min-width: 768px) {
     body {
-        font-size: 60px;
+        /* font-size: 60px; */
     }
 }
 
