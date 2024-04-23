@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>关于</title>
     <style>
-        
     </style>
 <link href="../zhouyi.css"type="text/css" rel="stylesheet" />
 <link href="../style.css"type="text/css" rel="stylesheet" />
@@ -29,6 +28,7 @@
     </div>
     <div class="container">
         <div class="sinput">
+            <button onclick="toIndex()">首页</button>
             <span class="font">请输入要查询的内容:</span><input type="text" id="search">
             <button onclick="toSearch()">查询</button>
         </div>
@@ -310,6 +310,7 @@
         </div>
     </div>
     <div class="zhlist">
+        <button onclick="toIndex()">首页</button>
         <table class="gualist">
                <tbody><tr> 
                <td><img src="../img/zh.png" title="上下卦" height="72" width="50"></td>
@@ -396,6 +397,7 @@
                </tbody></table>
     </div>
     <div class="picbg">
+        <div style="margin-bottom: 20px;"><button onclick="toIndex()">首页</button></div>
         <div style="width:100%;height: 100%;"><img style="width:100%;height: 100%;" src="../img/xtht.jpg" title="八卦图"></div>
     </div>
     </div>
@@ -419,6 +421,9 @@
         }
         function topic(){
             $(".picbg").css("display", "block").siblings().hide();
+        }
+        function toIndex(){
+            $(".begin").css("display", "block").siblings().hide();
         }
         // var data = {
         //     "乾": {
