@@ -689,6 +689,12 @@
     </div>
     <div class="wnl" id="wnldiv">
         <button onclick="toIndex()">首页</button>
+        <button onclick="WnlLeft()">＜前</button>
+        <button onclick="WnlRight()">＞后</button>
+        <div id="wnlTxt">
+            <span class="todate"></span>
+            <span class="gzdate"></span>
+        </div>
         <div class="flex wnlwrap">
             <iframe id="dynamicIframe" src=""></iframe>
             <div id="output">
@@ -742,6 +748,26 @@
         // }, function (errorStatus) {
         //     console.error('请求失败，状态码：', errorStatus);
         // });
+        //今日分析 高亮天干地支的函数
+        function highlightCharacters(chars) {
+            // 遍历所有的 <p> 元素
+            const paragraphs = document.querySelectorAll('#output p');
+
+            paragraphs.forEach((p) => {
+                let originalText = p.innerHTML;
+
+                // 遍历字符数组
+                chars.forEach((char) => {
+                    // 创建一个正则表达式，找到匹配的字符
+                    const regex = new RegExp(`(${char})`, 'g');
+                    // 替换匹配的字符，添加红色加粗的样式
+                    originalText = originalText.replace(regex, '<span style="color: red; font-weight: bold;">$1</span>');
+                });
+
+                // 更新 <p> 元素的内容
+                p.innerHTML = originalText;
+            });
+        }
         function bagua() {
             $(".container").css("display", "block").siblings().hide();
         }
@@ -754,39 +780,41 @@
         function toIndex() {
             $(".begin").css("display", "block").siblings().hide();
         }
+        function WnlLeft() {
+            var day = adjustDate($("#wnlTxt .todate").html(), -1);
+            $("#wnlTxt .todate").html(day);
+            var gzdate = getGanzhiFromReference(day);
+            $("#wnlTxt .gzdate").html(gzdate.yearGanzhi + "-" + gzdate.monthGanzhi + "-" + gzdate.dayGanzhi);
+            var arr = gzdate.yearGanzhi.split("").concat(gzdate.monthGanzhi.split(""), gzdate.dayGanzhi.split(""));
+            var txtarr = [...new Set(arr)];
+            highlightCharacters(txtarr);
+            var iframe = document.getElementById('dynamicIframe');
+            iframe.src = `https://mobile.51wnl-cq.com/huangli_tab_h5/?posId=BDSS&STIME=${day}`;
+        }
+        function WnlRight() {
+            var day = adjustDate($("#wnlTxt .todate").html(), +1);
+            $("#wnlTxt .todate").html(day);
+            var gzdate = getGanzhiFromReference(day);
+            $("#wnlTxt .gzdate").html(gzdate.yearGanzhi + "-" + gzdate.monthGanzhi + "-" + gzdate.dayGanzhi);
+            var arr = gzdate.yearGanzhi.split("").concat(gzdate.monthGanzhi.split(""), gzdate.dayGanzhi.split(""));
+            var txtarr = [...new Set(arr)];
+            highlightCharacters(txtarr);
+            var iframe = document.getElementById('dynamicIframe');
+            iframe.src = `https://mobile.51wnl-cq.com/huangli_tab_h5/?posId=BDSS&STIME=${day}`;
+        }
         function toWNL() {
             // 显示容器
             $(".wnl").css("display", "block").siblings().hide();
-            console.log(getGanzhiFromReference("2024-10-22"));
             // 动态设置iframe的src
-            const today = getTodayDate();
-            const iframe = document.getElementById('dynamicIframe');
+            var today = getTodayDate();
+            var gzdate = getGanzhiFromReference(today);
+            $("#wnlTxt .todate").html(today);
+            $("#wnlTxt .gzdate").html(gzdate.yearGanzhi + "-" + gzdate.monthGanzhi + "-" + gzdate.dayGanzhi);
+            var arr = gzdate.yearGanzhi.split("").concat(gzdate.monthGanzhi.split(""), gzdate.dayGanzhi.split(""));
+            var txtarr = [...new Set(arr)];
+            highlightCharacters(txtarr);
+            var iframe = document.getElementById('dynamicIframe');
             iframe.src = `https://mobile.51wnl-cq.com/huangli_tab_h5/?posId=BDSS&STIME=${today}`;
-
-            // 等待iframe加载完成后，获取内容
-            iframe.onload = function () {
-                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-
-                // 查找class="desc flex"的div
-                const descDiv = iframeDocument.querySelector('.desc.flex');
-                if (descDiv) {
-                    const spans = descDiv.getElementsByTagName('span');
-                    let outputText = '';
-
-                    // 获取每个span中的第二个字符
-                    for (let i = 0; i < spans.length; i++) {
-                        const spanText = spans[i].innerText;
-                        if (spanText.length >= 2) {
-                            outputText += spanText.charAt(1) + ' '; // 获取第二个字符
-                        }
-                    }
-
-                    // 显示到页面的div中
-                    document.getElementById('output').innerText = outputText.trim();
-                } else {
-                    document.getElementById('output').innerText = '未找到相关内容';
-                }
-            };
         }
         // var data = {
         //     "乾": {
@@ -1013,6 +1041,21 @@
                 monthGanzhi,
                 dayGanzhi
             };
+        }
+        function adjustDate(dateString, num) {
+            // 将输入的日期字符串转换为 Date 对象
+            const [year, month, day] = dateString.split('-').map(Number);
+            const date = new Date(year, month - 1, day);
+
+            // 根据 num 的值调整日期
+            date.setDate(date.getDate() + num);
+
+            // 格式化为 "YYYY-MM-DD" 字符串
+            const newYear = date.getFullYear();
+            const newMonth = String(date.getMonth() + 1).padStart(2, '0'); // 补全两位
+            const newDay = String(date.getDate()).padStart(2, '0'); // 补全两位
+
+            return `${newYear}-${newMonth}-${newDay}`;
         }
 
         window.onload = function () {
