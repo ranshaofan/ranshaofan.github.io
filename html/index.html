@@ -15,9 +15,11 @@
             width: 50%;
             height: 90%;
         }
-        #output{
-            margin-left:10px ;
+
+        #output {
+            margin-left: 10px;
         }
+
         .wnl,
         .wnlwrap {
             width: 100%;
@@ -755,6 +757,7 @@
         function toWNL() {
             // 显示容器
             $(".wnl").css("display", "block").siblings().hide();
+            console.log(getGanzhiFromReference("2024-10-22"));
             // 动态设置iframe的src
             const today = getTodayDate();
             const iframe = document.getElementById('dynamicIframe');
@@ -961,37 +964,55 @@
             return `${year}-${month}-${day}`;
         }
 
-        function getGanzhiDate(dateString) {
+        function getGanzhiFromReference(dateString) {
             // 定义天干和地支
             const tiangan = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
             const dizhi = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
 
+            // 已知的参考点：2024-10-18
+            const referenceDate = new Date(2024, 9, 18); // 月份从0开始，所以9代表10月
+            const referenceYearGanzhi = { tiangan: '甲', dizhi: '辰' };
+            const referenceMonthGanzhi = { tiangan: '甲', dizhi: '戌' };
+            const referenceDayGanzhi = { tiangan: '乙', dizhi: '卯' };
+
             // 将输入的日期字符串转换为 Date 对象
             const [year, month, day] = dateString.split('-').map(Number);
-            const date = new Date(year, month - 1, day);
+            const targetDate = new Date(year, month - 1, day);
 
-            // 计算年干支
-            const yearTianganIndex = (year - 4) % 10;
-            const yearDizhiIndex = (year - 4) % 12;
-            const yearGanzhi = tiangan[yearTianganIndex] + dizhi[yearDizhiIndex];
-
-            // 计算月干支
-            // 立春日期通常在2月4日或5日，用于判断月份干支的起始
-            const solarTermDate = new Date(year, 1, 4); // 假设立春为2月4日
-            let lunarMonthOffset = date >= solarTermDate ? month - 1 : month + 11;
-            const monthDizhiIndex = (lunarMonthOffset + 1) % 12;
-            const monthTianganIndex = (yearTianganIndex * 2 + lunarMonthOffset) % 10;
-            const monthGanzhi = tiangan[monthTianganIndex] + dizhi[monthDizhiIndex];
+            // 计算日期差
+            const daysDiff = Math.floor((targetDate - referenceDate) / (1000 * 60 * 60 * 24));
 
             // 计算日干支
-            const baseDate = new Date(1900, 0, 31); // 基准日：1900年1月31日（甲子日）
-            const daysDiff = Math.floor((date - baseDate) / (1000 * 60 * 60 * 24));
+            function calculateGanzhi(baseTiangan, baseDizhi, diff, tiangan, dizhi) {
+                const baseTianganIndex = tiangan.indexOf(baseTiangan);
+                const baseDizhiIndex = dizhi.indexOf(baseDizhi);
 
-            const dayTianganIndex = (daysDiff + 1) % 10; // +1 是为了调整天干的起始点
-            const dayDizhiIndex = (daysDiff + 1) % 12; // +1 是为了调整地支的起始点
-            const dayGanzhi = tiangan[dayTianganIndex] + dizhi[dayDizhiIndex];
+                const newTianganIndex = (baseTianganIndex + diff) % 10;
+                const newDizhiIndex = (baseDizhiIndex + diff) % 12;
 
-            return `${yearGanzhi}年 ${monthGanzhi}月 ${dayGanzhi}日`;
+                const newTiangan = tiangan[(newTianganIndex + 10) % 10];
+                const newDizhi = dizhi[(newDizhiIndex + 12) % 12];
+
+                return newTiangan + newDizhi;
+            }
+
+            // 日干支计算
+            const dayGanzhi = calculateGanzhi(referenceDayGanzhi.tiangan, referenceDayGanzhi.dizhi, daysDiff, tiangan, dizhi);
+
+            // 年干支计算
+            const yearDiff = year - 2024;
+            const yearGanzhi = calculateGanzhi(referenceYearGanzhi.tiangan, referenceYearGanzhi.dizhi, yearDiff, tiangan, dizhi);
+
+            // 月干支计算
+            // 假设每月的月干支在周期上是固定的，按一年12个月来循环
+            const monthDiff = (yearDiff * 12) + (month - 10); // 从10月开始计算月差值
+            const monthGanzhi = calculateGanzhi(referenceMonthGanzhi.tiangan, referenceMonthGanzhi.dizhi, monthDiff, tiangan, dizhi);
+
+            return {
+                yearGanzhi,
+                monthGanzhi,
+                dayGanzhi
+            };
         }
 
         window.onload = function () {
